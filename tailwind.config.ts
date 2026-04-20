@@ -49,6 +49,10 @@ export default {
         },
         marsala: "hsl(var(--marsala))",
         bege: "hsl(var(--bege))",
+        paper: "hsl(var(--paper))",
+        ink: "hsl(var(--ink))",
+        cream: "hsl(var(--cream))",
+        wine: "hsl(var(--wine))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -61,8 +65,9 @@ export default {
         },
       },
       fontFamily: {
-        display: ['"Playfair Display"', 'serif'],
+        display: ['Lora', 'serif'],
         body: ['"Source Sans 3"', 'sans-serif'],
+        handwritten: ['Caveat', 'cursive'],
       },
       borderRadius: {
         lg: "var(--radius)",

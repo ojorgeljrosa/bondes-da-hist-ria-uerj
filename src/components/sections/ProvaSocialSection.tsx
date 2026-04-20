@@ -1,4 +1,4 @@
-import { Star } from "../Star";
+import { PaperClip } from "../Decorations";
 
 const testimonials = [
   {
@@ -27,58 +27,64 @@ const aprovados = ["Ana Clara M.", "Lucas S.", "Beatriz R.", "Pedro H.", "Camila
 
 export const ProvaSocialSection = () => (
   <section className="bg-bege paper-texture py-16 md:py-24 relative">
-    <Star className="absolute top-4 left-6 opacity-40" color="red" size={22} />
-    <Star className="absolute top-4 right-6 opacity-40" color="blue" size={22} />
-
     <div className="container mx-auto px-4">
-      <h2 className="font-display text-2xl md:text-4xl font-bold text-marsala text-center mb-12">
+      <h2 className="font-display text-2xl md:text-4xl font-bold text-ink text-center mb-3">
         Veja o que nossos alunos dizem
       </h2>
+      <p className="font-handwritten text-xl text-primary text-center mb-12">
+        — feedbacks reais —
+      </p>
 
-      {/* Testimonials */}
       <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
-        {testimonials.map((t) => (
-          <div key={t.name} className="bg-card rounded-xl p-6 shadow-md border border-border relative">
-            <div className="text-4xl text-primary/20 font-display absolute top-3 left-4">"</div>
-            <p className="font-body text-sm text-foreground leading-relaxed mb-4 mt-4 italic">"{t.text}"</p>
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                <span className="font-bold text-primary text-sm">
-                  {t.name.split(" ").map((n) => n[0]).join("")}
-                </span>
-              </div>
-              <div>
-                <p className="font-bold text-sm text-foreground">— {t.name}</p>
-                {t.course && (
-                  <p className="text-xs font-semibold text-accent-foreground bg-accent/80 inline-block px-2 py-0.5 rounded-full mt-1">
-                    {t.course}
-                  </p>
-                )}
+        {testimonials.map((t, i) => (
+          <div key={t.name} className="bg-cream border border-border rounded p-6 shadow-sm relative">
+            {i === 0 && <PaperClip className="absolute -top-4 right-6" />}
+            {/* Lined paper effect */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden rounded opacity-20">
+              {Array.from({ length: 8 }).map((_, j) => (
+                <div key={j} className="border-b border-blue-300/50" style={{ marginTop: j === 0 ? '28px' : '24px' }} />
+              ))}
+            </div>
+            <div className="relative z-10">
+              <p className="font-body text-sm text-ink leading-relaxed mb-4 italic">"{t.text}"</p>
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20">
+                  <span className="font-bold text-primary text-xs">
+                    {t.name.split(" ").map((n) => n[0]).join("")}
+                  </span>
+                </div>
+                <div>
+                  <p className="font-bold text-sm text-ink">— {t.name}</p>
+                  {t.course && (
+                    <p className="text-xs font-bold text-primary mt-0.5 font-handwritten text-base">{t.course}</p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Gallery */}
+      {/* Galeria dos Aprovados */}
       <div className="text-center">
-        <h3 className="font-display text-xl md:text-2xl font-bold text-foreground mb-8">
-          🎉 Galeria dos Aprovados
+        <h3 className="font-display text-xl md:text-2xl font-bold text-ink mb-2">
+          Galeria dos Aprovados
         </h3>
+        <p className="font-handwritten text-lg text-primary mb-8">🎉 parabéns a todos!</p>
         <div className="flex flex-wrap justify-center gap-4">
           {aprovados.map((name, i) => (
             <div
               key={name}
-              className="bg-card border-2 border-accent shadow-lg rounded-lg p-4 w-32 text-center"
-              style={{ transform: `rotate(${(i % 2 === 0 ? -3 : 3)}deg)` }}
+              className="bg-cream border border-border shadow-md rounded p-4 w-28 md:w-32 text-center"
+              style={{ transform: `rotate(${i % 2 === 0 ? -2 : 2}deg)` }}
             >
-              <div className="w-16 h-16 rounded-full bg-muted mx-auto mb-2 flex items-center justify-center">
-                <span className="font-display text-lg text-muted-foreground font-bold">
+              <div className="w-14 h-14 rounded-full bg-paper mx-auto mb-2 flex items-center justify-center border border-border">
+                <span className="font-display text-base text-muted-foreground font-bold">
                   {name.split(" ").map((n) => n[0]).join("")}
                 </span>
               </div>
-              <p className="font-body text-xs font-semibold text-foreground">{name}</p>
-              <p className="text-[10px] text-primary font-bold mt-1">APROVADO(A) ✓</p>
+              <p className="font-body text-xs font-semibold text-ink">{name}</p>
+              <p className="text-[10px] text-primary font-bold mt-1 font-handwritten text-sm">Aprovado(a) ✓</p>
             </div>
           ))}
         </div>
