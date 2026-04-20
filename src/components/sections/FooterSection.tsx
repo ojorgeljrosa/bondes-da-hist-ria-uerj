@@ -1,7 +1,7 @@
 import { Instagram, Youtube } from "lucide-react";
 
 export const FooterSection = () => (
-  <footer className="bg-marsala text-white/80 py-10">
+  <footer className="bg-marsala text-white/70 py-10">
     <div className="container mx-auto px-4">
       <div className="flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex gap-6 text-sm font-body">

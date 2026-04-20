@@ -1,4 +1,3 @@
-import { Star } from "../Star";
 import { Check } from "lucide-react";
 
 const LINKS = {
@@ -38,51 +37,51 @@ const offers = [
 ];
 
 export const ComparacaoSection = () => (
-  <section className="relative overflow-hidden py-16 md:py-24 rays-blue">
-    <div className="absolute inset-0 bg-black/40 z-0" />
-    <Star className="absolute top-6 right-8 z-10" color="gold" size={32} />
-
-    <div className="relative z-10 container mx-auto px-4">
-      <h2 className="font-display text-2xl md:text-4xl font-bold text-white text-center mb-12">
+  <section className="relative py-16 md:py-24 bg-secondary paper-texture">
+    <div className="container mx-auto px-4">
+      <h2 className="font-display text-2xl md:text-4xl font-bold text-white text-center mb-3">
         Escolha o melhor caminho para sua aprovação
       </h2>
+      <p className="font-handwritten text-xl text-white/60 text-center mb-12">
+        — compare as opções —
+      </p>
 
       <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {offers.map((o) => (
           <div
             key={o.name}
-            className={`bg-card rounded-xl p-6 text-center shadow-lg ${
-              o.highlight ? "ring-4 ring-accent relative" : ""
+            className={`bg-cream rounded border border-border p-6 text-center shadow-md ${
+              o.highlight ? "ring-2 ring-primary relative" : ""
             }`}
           >
             {o.highlight && (
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground text-xs font-bold px-4 py-1 rounded-full">
-                ⭐ DESTAQUE
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 red-tape text-white text-xs font-bold px-4 py-1">
+                ✦ DESTAQUE
               </div>
             )}
-            <h3 className="font-display text-lg font-bold text-foreground mb-2 mt-2">{o.name}</h3>
+            <h3 className="font-display text-lg font-bold text-ink mb-2 mt-2">{o.name}</h3>
             <p className="text-sm text-muted-foreground font-body mb-4">{o.content}</p>
             <ul className="space-y-2 mb-6 text-left">
               {o.features.map((f) => (
-                <li key={f} className="flex items-center gap-2 text-sm font-body text-foreground">
+                <li key={f} className="flex items-center gap-2 text-sm font-body text-ink">
                   <Check className="w-4 h-4 text-primary shrink-0" />
                   {f}
                 </li>
               ))}
             </ul>
-            <p className="font-display text-2xl font-bold text-foreground">{o.price}</p>
+            <p className="font-display text-2xl font-bold text-ink">{o.price}</p>
             <p className="text-xs text-muted-foreground mb-4">{o.installments}</p>
             <a
               href={o.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`block w-full py-3 rounded-lg font-bold transition-all hover:scale-105 ${
+              className={`block w-full py-3 rounded font-bold transition-all hover:scale-105 ${
                 o.highlight
-                  ? "bg-accent text-accent-foreground shadow-lg"
+                  ? "bg-primary text-primary-foreground shadow-md border-b-4 border-primary/70"
                   : "bg-secondary text-secondary-foreground"
               }`}
             >
-              {o.highlight ? "QUERO O COMBO" : `QUERO ${o.name.toUpperCase().replace("E-BOOK ", "")}`}
+              {o.highlight ? "QUERO O COMBO" : "COMPRAR"}
             </a>
           </div>
         ))}

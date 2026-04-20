@@ -1,46 +1,55 @@
-import { Star } from "../Star";
-
-const people = [
-  {
-    name: "Julia Ramos",
-    borderColors: "border-primary ring-secondary",
-    role: "Graduada em História pela UFRJ • Especialista em Ensino de História",
-    bio: "Apaixonada por educação e por tornar a história acessível a todos. Com anos de experiência preparando alunos para vestibulares, Julia desenvolveu métodos práticos para que qualquer estudante domine as provas da UERJ com confiança.",
-  },
-  {
-    name: "Thiago Fernandes",
-    borderColors: "border-secondary ring-accent",
-    role: "Formado em História pela UFRRJ • Mestre em Ensino de História",
-    bio: "Thiago combina sua formação acadêmica com uma didática envolvente. Seus alunos o conhecem por transformar temas complexos em explicações claras e diretas, sempre focadas no que realmente cai na prova.",
-  },
-];
+import professors from "@/assets/professors.png";
+import { TapeStrip } from "../Decorations";
 
 export const QuemSomosSection = () => (
-  <section className="bg-card paper-texture py-16 md:py-24 relative">
+  <section className="bg-paper paper-texture py-16 md:py-24 relative">
     <div className="container mx-auto px-4">
-      <h2 className="font-display text-2xl md:text-4xl font-bold text-foreground text-center mb-12">
+      <h2 className="font-display text-2xl md:text-4xl font-bold text-ink text-center mb-3">
         Quem está por trás deste projeto?
       </h2>
+      <p className="font-handwritten text-xl text-primary text-center mb-12">
+        — conheça os professores —
+      </p>
 
-      <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-        {people.map((p) => (
-          <div key={p.name} className="text-center">
-            <div
-              className={`w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-5 border-4 ring-4 ${p.borderColors} bg-muted flex items-center justify-center`}
-            >
-              <span className="font-display text-3xl md:text-4xl text-muted-foreground font-bold">
-                {p.name.split(" ").map((n) => n[0]).join("")}
-              </span>
-            </div>
-            <h3 className="font-display text-xl font-bold text-foreground mb-1">{p.name}</h3>
-            <p className="font-body text-sm text-primary font-semibold mb-3">{p.role}</p>
-            <p className="font-body text-muted-foreground text-sm leading-relaxed max-w-sm mx-auto">{p.bio}</p>
-          </div>
-        ))}
+      {/* Photo - using the real uploaded photo */}
+      <div className="max-w-md mx-auto mb-12 relative">
+        <TapeStrip className="absolute -top-3 left-1/4 z-10" rotation={-3} />
+        <TapeStrip className="absolute -top-3 right-1/4 z-10" rotation={2} />
+        <div className="bg-cream p-3 shadow-lg border border-border rotate-[1deg]">
+          <img
+            src={professors}
+            alt="Julia Ramos e Thiago Fernandes — professores do Discursando História"
+            className="w-full rounded-sm"
+          />
+        </div>
       </div>
 
-      <div className="text-center mt-8">
-        <Star color="gold" size={36} />
+      <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        {/* Julia */}
+        <div className="bg-cream border border-border rounded p-6 shadow-sm relative notebook-margin ml-0 md:ml-4">
+          <h3 className="font-display text-xl font-bold text-ink mb-1">Julia Ramos</h3>
+          <p className="font-body text-sm text-primary font-semibold mb-3">
+            Graduada em História pela UFRJ • Especialista em Ensino de História
+          </p>
+          <p className="font-body text-muted-foreground text-sm leading-relaxed">
+            Apaixonada por educação e por tornar a história acessível a todos. Com anos de experiência
+            preparando alunos para vestibulares, Julia desenvolveu métodos práticos para que qualquer
+            estudante domine as provas da UERJ com confiança.
+          </p>
+        </div>
+
+        {/* Thiago */}
+        <div className="bg-cream border border-border rounded p-6 shadow-sm relative notebook-margin ml-0 md:ml-4">
+          <h3 className="font-display text-xl font-bold text-ink mb-1">Thiago Fernandes</h3>
+          <p className="font-body text-sm text-primary font-semibold mb-3">
+            Formado em História pela UFRRJ • Mestre em Ensino de História
+          </p>
+          <p className="font-body text-muted-foreground text-sm leading-relaxed">
+            Thiago combina sua formação acadêmica com uma didática envolvente. Seus alunos o conhecem por
+            transformar temas complexos em explicações claras e diretas, sempre focadas no que realmente
+            cai na prova.
+          </p>
+        </div>
       </div>
     </div>
   </section>
