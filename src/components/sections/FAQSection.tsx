@@ -11,6 +11,10 @@ const faqs = [
     a: "Após a confirmação do pagamento, você recebe imediatamente o acesso por e-mail com o link para download. O processo é automático e instantâneo via plataforma Hotmart.",
   },
   {
+    q: "O material é digital?",
+    a: "Sim! São e-books em formato PDF para você estudar onde quiser: celular, tablet ou computador. Baixe uma vez e tenha acesso vitalício.",
+  },
+  {
     q: "Tenho garantia?",
     a: "Sim! Você tem 7 dias de garantia incondicional. Se por qualquer motivo não ficar satisfeito(a), devolvemos 100% do seu dinheiro, sem perguntas.",
   },

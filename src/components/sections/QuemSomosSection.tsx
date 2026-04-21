@@ -1,4 +1,4 @@
-import professors from "@/assets/professors.png";
+import juliaThiagoVertical from "@/assets/julia-thiago-vertical.jpeg";
 import { TapeStrip } from "../Decorations";
 
 export const QuemSomosSection = () => (
@@ -11,13 +11,13 @@ export const QuemSomosSection = () => (
         — conheça os professores —
       </p>
 
-      {/* Photo - using the real uploaded photo */}
-      <div className="max-w-md mx-auto mb-12 relative">
+      {/* Photo - using the vertical photo from /fotos folder */}
+      <div className="max-w-sm mx-auto mb-12 relative">
         <TapeStrip className="absolute -top-3 left-1/4 z-10" rotation={-3} />
         <TapeStrip className="absolute -top-3 right-1/4 z-10" rotation={2} />
         <div className="bg-cream p-3 shadow-lg border border-border rotate-[1deg]">
           <img
-            src={professors}
+            src={juliaThiagoVertical}
             alt="Julia Ramos e Thiago Fernandes — professores do Discursando História"
             className="w-full rounded-sm"
           />

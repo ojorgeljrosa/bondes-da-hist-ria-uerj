@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, BookOpen, ScrollText } from "lucide-react";
 
 const LINKS = {
   combo: "https://go.hotmart.com/D105224878P?dp=1",
@@ -10,13 +10,15 @@ const products = [
   {
     title: "E-book Objetivo",
     subtitle: "Foco no 1º Exame de Qualificação",
+    description: "Ideal para quem quer garantir o conceito A logo na primeira fase.",
+    icon: BookOpen,
     accent: "bg-secondary",
     features: [
-      "Análise completa do 1º EQ",
-      "Estratégias para questões objetivas",
-      "Tópicos mais cobrados de História do Brasil",
-      "Período colonial ao contemporâneo",
-      "Questões organizadas por assunto",
+      "Explicação detalhada da prova",
+      "Os principais assuntos cobrados",
+      "Efemérides (datas importantes) fundamentais para o exame objetivo",
+      "Questões selecionadas e organizadas por assunto",
+      "Do período colonial ao contemporâneo",
     ],
     price: "R$ 29,20",
     installments: "ou 4x de R$ 7,95",
@@ -26,12 +28,15 @@ const products = [
   {
     title: "COMBO APROVAÇÃO",
     subtitle: "Os 2 E-books juntos",
+    description: "A preparação completa que você precisa, no formato que cabe no seu bolso.",
+    icon: ScrollText,
     accent: "bg-primary",
     features: [
       "2 e-books completos inclusos",
       "Economia de 32% no combo",
       "Cobertura total: objetivo + discursiva",
       "Efemérides 2026 incluídas",
+      "Questões organizadas por tema",
       "Melhor custo-benefício",
     ],
     price: "R$ 49,00",
@@ -42,12 +47,14 @@ const products = [
   {
     title: "E-book Discursivo",
     subtitle: "Foco na Prova Discursiva",
+    description: "O guia definitivo para quem vai fazer a prova específica e precisa aprender a construir as respostas que a banca espera.",
+    icon: ScrollText,
     accent: "bg-primary",
     features: [
-      "Foco total na 2ª fase (discursiva)",
-      "Modelos de respostas nota máxima",
-      "Critérios de correção da banca",
-      "Temas recorrentes analisados",
+      "Análise do padrão de resposta da UERJ",
+      "Os temas que mais caem na discursiva",
+      "Efemérides voltadas para o contexto discursivo",
+      "Questões organizadas por assunto",
       "Dicas de estruturação textual",
     ],
     price: "R$ 29,20",
@@ -63,8 +70,12 @@ export const MateriaisSection = () => (
       <h2 className="font-display text-2xl md:text-4xl font-bold text-white text-center mb-3">
         Nossos Materiais
       </h2>
-      <p className="font-handwritten text-xl text-white/70 text-center mb-12">
-        — escolha o seu caminho —
+      <p className="font-handwritten text-xl text-white/70 text-center mb-4">
+        — estude com foco no que realmente cai —
+      </p>
+      <p className="font-body text-white/80 text-center max-w-2xl mx-auto mb-12">
+        Sem perder tempo com conteúdos desnecessários. Em ambos os materiais você encontra 
+        explicação da prova, principais assuntos, efemérides e questões organizadas.
       </p>
 
       <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto items-start">
@@ -81,12 +92,17 @@ export const MateriaisSection = () => (
               </div>
             )}
 
-            <div className={`${p.accent} p-5 ${p.highlight ? "" : ""} text-center`}>
+            <div className={`${p.accent} p-5 text-center`}>
+              <p.icon className="w-8 h-8 text-white mx-auto mb-2" />
               <span className="text-white font-display font-bold text-lg block">{p.title}</span>
               <span className="text-white/80 text-sm font-body block mt-1">{p.subtitle}</span>
             </div>
 
             <div className="p-6">
+              <p className="font-body text-sm text-muted-foreground mb-4 leading-relaxed">
+                {p.description}
+              </p>
+
               <ul className="space-y-3 mb-6">
                 {p.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm font-body text-ink">

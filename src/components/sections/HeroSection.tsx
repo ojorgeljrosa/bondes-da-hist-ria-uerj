@@ -28,14 +28,18 @@ export const HeroSection = () => (
         </h1>
       </div>
 
-      {/* Subheadline - handwritten style */}
-      <p className="font-handwritten text-2xl md:text-3xl text-secondary mb-3">
-        Domine a História no vestibular da UERJ
-      </p>
-      <p className="font-body text-base md:text-lg text-muted-foreground max-w-xl mx-auto mb-10">
-        Seu guia prático e premium para as provas de Qualificação e Discursiva.
-        Materiais criados por professores especialistas.
-      </p>
+    {/* Subheadline - handwritten style */}
+    <p className="font-handwritten text-2xl md:text-3xl text-secondary mb-3">
+      Domine a História no vestibular da UERJ e garanta sua vaga
+    </p>
+    <p className="font-body text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+      Um guia prático, direto e acessível, criado por especialistas para quem quer passar 
+      no Exame de Qualificação e na Discursiva, <strong className="text-ink">mesmo começando do zero</strong>.
+    </p>
+    <p className="font-body text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+      Um guia prático, direto e acessível, criado por especialistas para quem quer passar 
+      no Exame de Qualificação e na Discursiva, <strong className="text-ink">mesmo começando do zero</strong>.
+    </p>
 
       {/* Mockups styled as pinned paper */}
       <div className="flex justify-center gap-6 md:gap-10 mb-10">
