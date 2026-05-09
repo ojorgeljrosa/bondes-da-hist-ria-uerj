@@ -1,83 +1,124 @@
 import logo from "@/assets/logo.png";
-import { RedUnderline, TapeStrip } from "../Decorations";
+import { WashiTape, PushPin, StampBadge, StickerBadge, DoodleStar, DoodleArrow, HandwrittenNote, TornPaperOverlay, CrumpledOverlay, TornEdgeSection } from "../Decorations";
 
 const COMBO_LINK = "https://go.hotmart.com/D105224878P?dp=1";
 
 export const HeroSection = () => (
-  <section className="relative overflow-hidden min-h-[90vh] flex items-center justify-center paper-bg paper-texture">
-    {/* Notebook margin line */}
-    <div className="absolute left-12 md:left-20 top-0 bottom-0 border-l-2 border-primary/20 hidden md:block" />
+  <section className="relative overflow-x-clip py-16 md:py-24 md:min-h-[90vh] flex items-center justify-center bg-paper">
+    <CrumpledOverlay texture={2} opacity={0.07} />
 
-    {/* Decorative tape */}
-    <TapeStrip className="absolute top-8 right-12 hidden md:block" rotation={3} />
-    <TapeStrip className="absolute bottom-16 left-8 hidden md:block" rotation={-1} />
+    <div className="absolute inset-0 pointer-events-none overflow-hidden mx-4 md:mx-8">
+      <TornPaperOverlay texture={1} position="top-left" opacity={0.25} rotation={-12} />
+      <TornPaperOverlay texture={3} position="bottom-right" opacity={0.2} rotation={8} />
+      <TornPaperOverlay texture={5} position="top-right" opacity={0.15} rotation={15} />
+      <TornPaperOverlay texture={7} position="bottom-left" opacity={0.18} rotation={-5} />
+      <div className="absolute top-24 right-28 w-32 h-32 md:w-44 md:h-44 opacity-20"
+        style={{ backgroundImage: 'url("/textures/torn/9.png")', backgroundSize: 'cover', transform: 'rotate(22deg)' }}
+      />
+      <div className="absolute bottom-36 left-12 w-28 h-28 md:w-36 md:h-36 opacity-15"
+        style={{ backgroundImage: 'url("/textures/torn/11.png")', backgroundSize: 'cover', transform: 'rotate(-18deg)' }}
+      />
+    </div>
+
+    <div className="absolute left-8 md:left-16 top-0 bottom-0 border-l-2 border-primary/15 hidden md:block" />
+    <div className="absolute left-12 md:left-20 top-0 bottom-0 border-l border-azul/10 hidden md:block" />
+
+<WashiTape color="yellow" width="w-36" rotation={4} className="absolute top-6 right-16 hidden md:block" />
+<WashiTape color="pink" width="w-28" rotation={-6} className="absolute top-20 left-16 hidden md:block" />
+<WashiTape color="blue" width="w-32" rotation={2} className="absolute bottom-24 right-24 hidden md:block" />
+<WashiTape color="green" width="w-24" rotation={-3} className="absolute bottom-40 left-20 hidden md:block" />
+
+    <PushPin color="red" className="absolute top-12 left-1/3 hidden md:block" />
+    <PushPin color="blue" className="absolute top-28 right-1/4 hidden md:block" />
+    <PushPin color="yellow" className="absolute bottom-32 left-1/4 hidden md:block" />
+
+    <DoodleStar className="absolute top-16 right-40 opacity-40 hidden md:block" />
+    <DoodleStar className="absolute bottom-48 left-32 opacity-30 hidden md:block" />
+    <DoodleArrow direction="down" className="absolute bottom-20 right-1/3 opacity-30 w-6 h-20 hidden md:block" />
+
+<HandwrittenNote text="comece aqui! →" rotation={5} className="absolute top-1/3 right-16 md:right-24 text-xl hidden md:block" />
+<HandwrittenNote text="← melhor escolha!" rotation={-8} className="absolute bottom-1/3 left-20 md:left-28 text-lg hidden md:block" />
+
+    <StampBadge text="UERJ 2026" color="azul" className="absolute top-14 right-16 hidden md:block animate-stamp-in" />
 
     <div className="relative z-10 container mx-auto px-4 py-16 text-center">
-      {/* Logo */}
-      <img src={logo} alt="Discursando História" className="mx-auto h-16 md:h-20 mb-8 drop-shadow-sm" />
+      <div className="relative inline-block mb-8">
+        <WashiTape color="yellow" width="w-20" rotation={-4} className="absolute -top-3 left-4" />
+        <WashiTape color="yellow" width="w-20" rotation={3} className="absolute -top-3 right-4" />
+        <img src={logo} alt="Discursando História" className="mx-auto h-16 md:h-20 drop-shadow-sm" />
+      </div>
 
-      {/* Headline - mixed typography like the reference */}
-      <div className="max-w-4xl mx-auto mb-6">
-        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-ink leading-tight">
-          <span className="text-primary">BONDE:</span> A TURMA FOCADA NA{" "}
-          <span className="relative inline-block">
-            DISCURSIVA DE HISTÓRIA
-            <RedUnderline className="absolute -bottom-1 left-0 w-full" />
-          </span>{" "}
-          DA UERJ
+      <div className="max-w-4xl mx-auto mb-6 relative">
+        <h1 className="font-display font-bold text-ink leading-tight">
+          <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Domine a </span>
+          <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary relative inline-block">
+            História
+            <svg className="absolute -bottom-1 left-0 w-full h-3" viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M0,7 Q25,2 50,6 Q75,10 100,5 Q125,1 150,6 Q175,10 200,4" fill="none" stroke="hsl(352, 72%, 38%)" strokeWidth="3" strokeLinecap="round" />
+            </svg>
+          </span>
+          <br />
+          <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">no vestibular da </span>
+          <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-azul relative inline-block">UERJ</span>
+          <br />
+          <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">e garanta sua vaga na universidade pública.</span>
         </h1>
       </div>
 
-    {/* Subheadline - handwritten style */}
-    <p className="font-handwritten text-2xl md:text-3xl text-secondary mb-3">
-      Domine a História no vestibular da UERJ e garanta sua vaga
-    </p>
-    <p className="font-body text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-      Um guia prático, direto e acessível, criado por especialistas para quem quer passar 
-      no Exame de Qualificação e na Discursiva, <strong className="text-ink">mesmo começando do zero</strong>.
-    </p>
-    <p className="font-body text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
-      Um guia prático, direto e acessível, criado por especialistas para quem quer passar 
-      no Exame de Qualificação e na Discursiva, <strong className="text-ink">mesmo começando do zero</strong>.
-    </p>
-
-      {/* Mockups styled as pinned paper */}
-      <div className="flex justify-center gap-6 md:gap-10 mb-10">
-        <div className="bg-cream border border-border rounded shadow-md p-3 rotate-[-2deg] w-36 md:w-44 relative">
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-            <div className="w-4 h-4 rounded-full bg-primary shadow-sm" />
-          </div>
-          <div className="bg-secondary/90 h-44 md:h-52 rounded-sm flex items-center justify-center text-white font-display text-sm font-bold p-3 text-center leading-snug">
-            E-book<br />1º Exame de<br />Qualificação<br /><span className="font-handwritten text-lg">(Objetivo)</span>
-          </div>
+      <div className="relative inline-block mb-8 max-w-2xl">
+        <div className="post-it post-it-yellow px-6 py-4 shadow-md" style={{ transform: 'rotate(-1.5deg)' }}>
+          <p className="font-handwritten text-xl md:text-2xl text-ink leading-snug">
+            Um guia prático, direto e acessível, criado por especialistas para quem quer passar no Exame de Qualificação e na Discursiva, <strong>mesmo começando do zero.</strong>
+          </p>
         </div>
-        <div className="bg-cream border border-border rounded shadow-md p-3 rotate-[2deg] w-36 md:w-44 relative">
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-            <div className="w-4 h-4 rounded-full bg-primary shadow-sm" />
-          </div>
-          <div className="bg-primary/90 h-44 md:h-52 rounded-sm flex items-center justify-center text-white font-display text-sm font-bold p-3 text-center leading-snug">
-            E-book<br />Discursiva<br />de História<br /><span className="font-handwritten text-lg">da UERJ</span>
-          </div>
-        </div>
+        <PushPin color="red" className="absolute -top-6 left-1/2 -translate-x-1/2" />
       </div>
 
-      {/* Badge - tape style */}
-      <div className="inline-block red-tape text-white font-bold text-sm px-6 py-2 mb-6 shadow-md">
-        ✦ MELHOR ESCOLHA — ECONOMIZE 32% ✦
+      <div className="flex justify-center gap-4 md:gap-8 mb-10 relative px-2">
+    <div className="polaroid w-32 sm:w-40 md:w-48 relative hover-lift" style={{ transform: 'rotate(-3deg)' }}>
+      <PushPin color="blue" className="absolute -top-7 left-1/2 -translate-x-1/2 z-20" />
+      <img
+        src="/capas/Capa ebook Exame de Qualificação.png"
+        alt="E-book 1º Exame de Qualificação (Objetivo)"
+        className="h-36 sm:h-44 md:h-52 w-full object-cover"
+      />
+      <p className="font-handwritten text-center text-xs text-ink/60 mt-1">1º fase ✎</p>
+    </div>
+
+    <div className="polaroid w-32 sm:w-40 md:w-48 relative hover-lift" style={{ transform: 'rotate(3deg)' }}>
+      <PushPin color="red" className="absolute -top-7 left-1/2 -translate-x-1/2 z-20" />
+      <img
+        src="/capas/Capa Ebook Discursiva.png"
+        alt="E-book Discursiva de História da UERJ"
+        className="h-36 sm:h-44 md:h-52 w-full object-cover"
+      />
+      <p className="font-handwritten text-center text-xs text-ink/60 mt-1">2º fase ✎</p>
+    </div>
       </div>
 
-      {/* CTA */}
-      <div>
-        <a
-          href={COMBO_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg md:text-xl px-10 py-5 rounded shadow-lg transition-all hover:scale-105 border-b-4 border-primary/70"
-        >
+<div className="mb-4 relative inline-block">
+          <StickerBadge
+            text="✦ ECONOMIZE 32% ✦"
+            bgColor="bg-primary"
+            textColor="text-white"
+            size="md"
+            rotation={-3}
+            className="animate-stamp-in md:!w-28 md:!h-28 md:!text-xs"
+          />
+        </div>
+
+        <div className="mb-4 px-4">
+          <a href={COMBO_LINK} target="_blank" rel="noopener noreferrer"
+            className="relative inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-base md:text-lg lg:text-xl px-6 md:px-10 py-4 md:py-5 rounded shadow-xl transition-all hover:scale-105 border-b-4 border-primary/70 hover-lift"
+          >
           QUERO O COMBO AGORA (R$ 49,00)!
         </a>
         <p className="text-muted-foreground text-sm mt-3 font-body">ou em 7x de R$ 8,01 no cartão</p>
       </div>
+
+      <DoodleArrow direction="down" className="mx-auto w-8 h-16 opacity-30 mt-2" />
     </div>
+
+    <TornEdgeSection position="bottom" color="cream" />
   </section>
 );

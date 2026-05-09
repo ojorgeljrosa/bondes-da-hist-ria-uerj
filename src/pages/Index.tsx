@@ -12,7 +12,7 @@ import { CTAFinalSection } from "@/components/sections/CTAFinalSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 const Index = () => (
-  <main className="overflow-x-hidden">
+  <main className="overflow-x-clip">
     <HeroSection />
     <PropositoSection />
     <ProblemaSection />
