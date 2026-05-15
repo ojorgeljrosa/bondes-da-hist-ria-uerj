@@ -16,7 +16,7 @@ import {
 } from "../Decorations";
 
 export const PropositoSection = () => (
-  <section className="bg-cream py-16 md:py-20 relative overflow-x-clip">
+  <section className="bg-cream pt-4 pb-14 md:pt-6 md:pb-16 relative overflow-x-clip">
     <CrumpledOverlay texture={3} opacity={0.08} />
 <div className="container mx-auto px-4 max-w-4xl relative z-10">
 <div className="relative bg-paper paper-texture border border-border p-8 md:p-12 shadow-xl animate-fade-in-rotate ml-4" style={{ transform: "rotate(-0.3deg)" }}>

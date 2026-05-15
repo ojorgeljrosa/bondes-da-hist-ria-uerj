@@ -396,7 +396,7 @@ export const TornPaperOverlay = ({
     <div
       className={cn("absolute pointer-events-none w-48 h-48 md:w-64 md:h-64 bg-cover bg-center", positions[position], className)}
       style={{
-        backgroundImage: `url("/textures/torn/${texture}.png")`,
+        backgroundImage: `url("${import.meta.env.BASE_URL}textures/torn/${texture}.png")`,
         opacity,
         transform: `rotate(${rotation}deg)`,
       }}
@@ -417,7 +417,7 @@ export const CrumpledOverlay = ({
   <div
     className={cn("absolute inset-0 pointer-events-none bg-cover bg-center mix-blend-multiply", className)}
     style={{
-      backgroundImage: `url("/textures/crumpled/${String(texture).padStart(2, '0')}.jpg")`,
+      backgroundImage: `url("${import.meta.env.BASE_URL}textures/crumpled/${String(texture).padStart(2, '0')}.jpg")`,
       opacity,
     }}
     aria-hidden="true"
@@ -436,7 +436,7 @@ export const CrayonOverlay = ({
   <div
     className={cn("absolute inset-0 pointer-events-none bg-cover bg-center mix-blend-multiply", className)}
     style={{
-      backgroundImage: `url("/textures/crayon/${String(texture).padStart(3, '0')}.png")`,
+      backgroundImage: `url("${import.meta.env.BASE_URL}textures/crayon/${String(texture).padStart(3, '0')}.png")`,
       opacity,
     }}
     aria-hidden="true"

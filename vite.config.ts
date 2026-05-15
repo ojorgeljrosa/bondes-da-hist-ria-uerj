@@ -8,6 +8,7 @@ export default defineConfig({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: ["jorge-h110.tail83a3f1.ts.net"],
     hmr: {
       overlay: false,
     },

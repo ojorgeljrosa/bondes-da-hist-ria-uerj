@@ -2,7 +2,6 @@ import { Lock, HelpCircle, Compass } from "lucide-react";
 import {
   WashiTape,
   PushPin,
-  StampBadge,
   HandwrittenNote,
   TornEdgeSection,
   NewspaperClip,
@@ -116,9 +115,7 @@ export const ProblemaSection = () => (
 
       {/* Mission box — newspaper clip style */}
       <div className="max-w-3xl mx-auto text-center relative mb-12">
-        <StampBadge text="MISSÃO" color="primary" className="absolute -top-5 left-1/2 -translate-x-1/2 z-20" />
-
-        <NewspaperClip className="mt-4">
+        <NewspaperClip>
           <p className="font-body text-ink text-base md:text-lg leading-relaxed">
             <strong className="text-primary">Nossa missão</strong> é democratizar o acesso à universidade pública,
             fornecendo as ferramentas necessárias para seu sucesso —{" "}

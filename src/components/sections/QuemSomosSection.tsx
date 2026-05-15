@@ -2,7 +2,6 @@ import juliaThiagoVertical from "@/assets/julia-thiago-vertical.jpeg";
 import {
   WashiTape,
   PushPin,
-  StampBadge,
   PolaroidFrame,
   PostIt,
   DoodleHeart,
@@ -27,12 +26,9 @@ export const QuemSomosSection = () => (
           Quem está por trás deste projeto?
         </h2>
         <DoodleUnderline className="mx-auto mt-1 w-80 md:w-[500px]" />
-        <div className="flex items-center justify-center gap-3 mt-3">
-          <p className="font-handwritten text-xl text-primary">
-            — conheça os professores —
-          </p>
-          <StampBadge text="PROFESSORES" color="primary" className="animate-stamp-in" />
-        </div>
+        <p className="font-handwritten text-xl text-primary mt-3">
+          — conheça os professores —
+        </p>
       </div>
 
       {/* Main photo — large polaroid with washi tape & push pin */}

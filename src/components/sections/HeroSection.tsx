@@ -4,7 +4,7 @@ import { WashiTape, PushPin, StampBadge, StickerBadge, DoodleStar, DoodleArrow, 
 const COMBO_LINK = "https://go.hotmart.com/D105224878P?dp=1";
 
 export const HeroSection = () => (
-  <section className="relative overflow-x-clip py-16 md:py-24 md:min-h-[90vh] flex items-center justify-center bg-paper">
+  <section className="relative overflow-x-clip pt-16 pb-8 md:pt-20 md:pb-10 bg-paper">
     <CrumpledOverlay texture={2} opacity={0.07} />
 
     <div className="absolute inset-0 pointer-events-none overflow-hidden mx-4 md:mx-8">
@@ -13,10 +13,10 @@ export const HeroSection = () => (
       <TornPaperOverlay texture={5} position="top-right" opacity={0.15} rotation={15} />
       <TornPaperOverlay texture={7} position="bottom-left" opacity={0.18} rotation={-5} />
       <div className="absolute top-24 right-28 w-32 h-32 md:w-44 md:h-44 opacity-20"
-        style={{ backgroundImage: 'url("/textures/torn/9.png")', backgroundSize: 'cover', transform: 'rotate(22deg)' }}
+        style={{ backgroundImage: `url("${import.meta.env.BASE_URL}textures/torn/9.png")`, backgroundSize: 'cover', transform: 'rotate(22deg)' }}
       />
       <div className="absolute bottom-36 left-12 w-28 h-28 md:w-36 md:h-36 opacity-15"
-        style={{ backgroundImage: 'url("/textures/torn/11.png")', backgroundSize: 'cover', transform: 'rotate(-18deg)' }}
+        style={{ backgroundImage: `url("${import.meta.env.BASE_URL}textures/torn/11.png")`, backgroundSize: 'cover', transform: 'rotate(-18deg)' }}
       />
     </div>
 
@@ -41,7 +41,7 @@ export const HeroSection = () => (
 
     <StampBadge text="UERJ 2026" color="azul" className="absolute top-14 right-16 hidden md:block animate-stamp-in" />
 
-    <div className="relative z-10 container mx-auto px-4 py-16 text-center">
+    <div className="relative z-10 container mx-auto px-4 text-center">
       <div className="relative inline-block mb-8">
         <WashiTape color="yellow" width="w-20" rotation={-4} className="absolute -top-3 left-4" />
         <WashiTape color="yellow" width="w-20" rotation={3} className="absolute -top-3 right-4" />
@@ -50,7 +50,7 @@ export const HeroSection = () => (
 
       <div className="max-w-4xl mx-auto mb-6 relative">
         <h1 className="font-display font-bold text-ink leading-tight">
-          <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Domine a </span>
+          <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">Domine </span>
           <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary relative inline-block">
             História
             <svg className="absolute -bottom-1 left-0 w-full h-3" viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true">
@@ -68,7 +68,7 @@ export const HeroSection = () => (
       <div className="relative inline-block mb-8 max-w-2xl">
         <div className="post-it post-it-yellow px-6 py-4 shadow-md" style={{ transform: 'rotate(-1.5deg)' }}>
           <p className="font-handwritten text-xl md:text-2xl text-ink leading-snug">
-            Um guia prático, direto e acessível, criado por especialistas para quem quer passar no Exame de Qualificação e na Discursiva, <strong>mesmo começando do zero.</strong>
+            Guias práticos, diretos e acessíveis, criados por especialistas para quem quer passar no Exame de Qualificação e na Discursiva, <strong>mesmo começando do zero.</strong>
           </p>
         </div>
         <PushPin color="red" className="absolute -top-6 left-1/2 -translate-x-1/2" />
@@ -78,7 +78,7 @@ export const HeroSection = () => (
     <div className="polaroid w-32 sm:w-40 md:w-48 relative hover-lift" style={{ transform: 'rotate(-3deg)' }}>
       <PushPin color="blue" className="absolute -top-7 left-1/2 -translate-x-1/2 z-20" />
       <img
-        src="/capas/Capa ebook Exame de Qualificação.png"
+        src={`${import.meta.env.BASE_URL}capas/Capa ebook Exame de Qualificação.png`}
         alt="E-book 1º Exame de Qualificação (Objetivo)"
         className="h-36 sm:h-44 md:h-52 w-full object-cover"
       />
@@ -88,7 +88,7 @@ export const HeroSection = () => (
     <div className="polaroid w-32 sm:w-40 md:w-48 relative hover-lift" style={{ transform: 'rotate(3deg)' }}>
       <PushPin color="red" className="absolute -top-7 left-1/2 -translate-x-1/2 z-20" />
       <img
-        src="/capas/Capa Ebook Discursiva.png"
+        src={`${import.meta.env.BASE_URL}capas/Capa Ebook Discursiva.png`}
         alt="E-book Discursiva de História da UERJ"
         className="h-36 sm:h-44 md:h-52 w-full object-cover"
       />
@@ -116,7 +116,7 @@ export const HeroSection = () => (
         <p className="text-muted-foreground text-sm mt-3 font-body">ou em 7x de R$ 8,01 no cartão</p>
       </div>
 
-      <DoodleArrow direction="down" className="mx-auto w-8 h-16 opacity-30 mt-2" />
+      <DoodleArrow direction="down" className="mx-auto w-8 h-10 opacity-30 mt-1" />
     </div>
 
     <TornEdgeSection position="bottom" color="cream" />

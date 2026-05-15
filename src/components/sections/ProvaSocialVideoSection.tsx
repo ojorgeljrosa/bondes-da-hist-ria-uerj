@@ -113,12 +113,12 @@ export const ProvaSocialVideoSection = () => (
 
       <div className="text-center mt-14">
         <StampBadge
-          text="500+ ALUNOS"
+          text="200+ ALUNOS"
           color="primary"
           className="animate-stamp-in inline-block text-base md:text-lg px-5 py-3"
         />
         <p className="font-body font-semibold text-primary mt-3">
-          Mais de 500 alunos já confiam no Discursando História
+          Mais de 200 alunos já confiam no Discursando História
         </p>
       </div>
     </div>

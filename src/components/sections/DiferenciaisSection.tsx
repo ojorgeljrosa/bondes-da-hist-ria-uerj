@@ -1,4 +1,4 @@
-import { Target, ListChecks, Calendar, DollarSign, Zap, Heart } from "lucide-react";
+import { Target, ListChecks, Calendar, DollarSign, Zap } from "lucide-react";
 import {
   WashiTape,
   PushPin,
@@ -18,13 +18,55 @@ const items = [
   { icon: Calendar, title: "Efemérides 2026", desc: "Datas importantes e aniversários históricos que podem cair na prova deste ano." },
   { icon: DollarSign, title: "Preço acessível", desc: "Alta qualidade sem pesar no bolso. Educação de qualidade deve ser para todos." },
   { icon: Zap, title: "Direto ao ponto", desc: "Sem enrolação, apenas o que realmente cai. Otimize seu tempo de estudo ao máximo." },
-  { icon: Heart, title: "Professores presentes", desc: "Cuidado e dedicação com cada aluno. Estamos juntos nessa jornada até a aprovação." },
 ];
 
 const tapeColors = ["pink", "green", "blue", "yellow", "red", "orange"] as const;
 const pinColors = ["red", "blue", "green", "yellow"] as const;
 
-export const DiferenciaisSection = () => (
+export const DiferenciaisSection = () => {
+  const renderCard = (item: (typeof items)[number], i: number, widthClassName: string) => {
+    const rot = i % 2 === 0 ? -1 : 1;
+    const hasPin = i % 2 === 0;
+    const hasTape = i % 3 !== 2;
+
+    return (
+      <div
+        key={item.title}
+        className={`collage-card hover-lift relative bg-cream p-5 pt-7 shadow-md ${widthClassName}`}
+        style={{ transform: `rotate(${rot}deg)` }}
+      >
+        <FoldedCorner className="absolute top-0 right-0" />
+
+        {hasPin && (
+          <PushPin
+            color={pinColors[i % 4]}
+            className="absolute -top-4 left-3 z-20"
+          />
+        )}
+
+        {hasTape && (
+          <WashiTape
+            color={tapeColors[i % 6]}
+            width="w-20"
+            rotation={rot * -3}
+            className="absolute -top-2.5 right-3 z-20"
+          />
+        )}
+
+        <div
+          className="w-12 h-12 border-2 border-dashed border-primary/30 rounded-full flex items-center justify-center shrink-0 mb-3"
+          style={{ transform: `rotate(${rot * 3}deg)` }}
+        >
+          <item.icon className="w-5 h-5 text-primary" />
+        </div>
+
+        <h3 className="font-display text-base font-bold text-ink mb-1">{item.title}</h3>
+        <p className="font-body text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+      </div>
+    );
+  };
+
+  return (
   <section className="bg-paper paper-texture py-16 md:py-24 relative overflow-x-clip">
     <CrayonOverlay texture={1} opacity={0.07} />
 
@@ -38,7 +80,7 @@ export const DiferenciaisSection = () => (
         </div>
         <div className="flex justify-center mt-4">
           <PostIt color="yellow" rotation={2} className="inline-block">
-            <HandwrittenNote text="— 6 razões para confiar —" rotation={0} className="!text-base md:!text-lg !italic" />
+            <HandwrittenNote text="— 5 razões para confiar —" rotation={0} className="!text-base md:!text-lg !italic" />
           </PostIt>
         </div>
       </div>
@@ -51,48 +93,14 @@ export const DiferenciaisSection = () => (
         <DoodleStar className="w-6 h-6 opacity-40" />
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto px-2 pt-4">
-        {items.map((item, i) => {
-          const rot = i % 2 === 0 ? -1 : 1;
-          const hasPin = i % 2 === 0;
-          const hasTape = i % 3 !== 2;
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto px-2 pt-4 items-start">
+        {items.slice(0, 3).map((item, idx) => renderCard(item, idx, ""))}
+      </div>
 
-          return (
-            <div
-              key={item.title}
-              className="collage-card hover-lift relative bg-cream p-5 pt-7 shadow-md"
-              style={{ transform: `rotate(${rot}deg)` }}
-            >
-              <FoldedCorner className="absolute top-0 right-0" />
-
-              {hasPin && (
-                <PushPin
-                  color={pinColors[i % 4]}
-                  className="absolute -top-4 left-3 z-20"
-                />
-              )}
-
-              {hasTape && (
-                <WashiTape
-                  color={tapeColors[i % 6]}
-                  width="w-20"
-                  rotation={rot * -3}
-                  className="absolute -top-2.5 right-3 z-20"
-                />
-              )}
-
-              <div
-                className="w-12 h-12 border-2 border-dashed border-primary/30 rounded-full flex items-center justify-center shrink-0 mb-3"
-                style={{ transform: `rotate(${rot * 3}deg)` }}
-              >
-                <item.icon className="w-5 h-5 text-primary" />
-              </div>
-
-              <h3 className="font-display text-base font-bold text-ink mb-1">{item.title}</h3>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-            </div>
-          );
-        })}
+      <div className="flex flex-wrap justify-center items-start gap-6 md:gap-8 max-w-5xl mx-auto px-2 mt-6 md:mt-8">
+        {items.slice(3).map((item, idx) =>
+          renderCard(item, idx + 3, "w-full sm:w-[min(100%,20rem)] shrink-0 origin-top"),
+        )}
       </div>
 
       <div className="flex justify-center gap-2 mt-6">
@@ -108,4 +116,5 @@ export const DiferenciaisSection = () => (
 
     <TornEdgeSection position="bottom" color="cream" />
   </section>
-);
+  );
+};

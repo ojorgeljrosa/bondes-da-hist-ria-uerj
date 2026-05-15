@@ -145,19 +145,19 @@ transform: rotate(1deg);
 }
 
 .torn-paper-1 {
-background-image: url("/textures/1.png");
+background-image: url("./textures/1.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-paper-2 {
-background-image: url("/textures/2.png");
+background-image: url("./textures/2.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-paper-3 {
-background-image: url("/textures/3.png");
+background-image: url("./textures/3.png");
 background-size: cover;
 background-position: center;
 }
@@ -285,157 +285,157 @@ background-color: hsl(var(--cream));
 }
 
 .crayon-texture-1 {
-background-image: url("/textures/crayon/001.png");
+background-image: url("./textures/crayon/001.png");
 background-size: cover;
 background-position: center;
 }
 
 .crayon-texture-2 {
-background-image: url("/textures/crayon/002.png");
+background-image: url("./textures/crayon/002.png");
 background-size: cover;
 background-position: center;
 }
 
 .crayon-texture-3 {
-background-image: url("/textures/crayon/003.png");
+background-image: url("./textures/crayon/003.png");
 background-size: cover;
 background-position: center;
 }
 
 .crayon-texture-4 {
-background-image: url("/textures/crayon/004.png");
+background-image: url("./textures/crayon/004.png");
 background-size: cover;
 background-position: center;
 }
 
 .crayon-texture-5 {
-background-image: url("/textures/crayon/005.png");
+background-image: url("./textures/crayon/005.png");
 background-size: cover;
 background-position: center;
 }
 
 .crayon-texture-6 {
-background-image: url("/textures/crayon/006.png");
+background-image: url("./textures/crayon/006.png");
 background-size: cover;
 background-position: center;
 }
 
 .crayon-texture-7 {
-background-image: url("/textures/crayon/007.png");
+background-image: url("./textures/crayon/007.png");
 background-size: cover;
 background-position: center;
 }
 
 .crayon-texture-8 {
-background-image: url("/textures/crayon/008.png");
+background-image: url("./textures/crayon/008.png");
 background-size: cover;
 background-position: center;
 }
 
 .crumpled-texture-1 {
-background-image: url("/textures/crumpled/01.jpg");
+background-image: url("./textures/crumpled/01.jpg");
 background-size: cover;
 background-position: center;
 }
 
 .crumpled-texture-2 {
-background-image: url("/textures/crumpled/02.jpg");
+background-image: url("./textures/crumpled/02.jpg");
 background-size: cover;
 background-position: center;
 }
 
 .crumpled-texture-3 {
-background-image: url("/textures/crumpled/03.jpg");
+background-image: url("./textures/crumpled/03.jpg");
 background-size: cover;
 background-position: center;
 }
 
 .crumpled-texture-4 {
-background-image: url("/textures/crumpled/04.jpg");
+background-image: url("./textures/crumpled/04.jpg");
 background-size: cover;
 background-position: center;
 }
 
 .crumpled-texture-5 {
-background-image: url("/textures/crumpled/05.jpg");
+background-image: url("./textures/crumpled/05.jpg");
 background-size: cover;
 background-position: center;
 }
 
 .crumpled-texture-6 {
-background-image: url("/textures/crumpled/06.jpg");
+background-image: url("./textures/crumpled/06.jpg");
 background-size: cover;
 background-position: center;
 }
 
 .torn-texture-1 {
-background-image: url("/textures/torn/1.png");
+background-image: url("./textures/torn/1.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-texture-2 {
-background-image: url("/textures/torn/2.png");
+background-image: url("./textures/torn/2.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-texture-3 {
-background-image: url("/textures/torn/3.png");
+background-image: url("./textures/torn/3.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-texture-4 {
-background-image: url("/textures/torn/4.png");
+background-image: url("./textures/torn/4.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-texture-5 {
-background-image: url("/textures/torn/5.png");
+background-image: url("./textures/torn/5.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-texture-6 {
-background-image: url("/textures/torn/6.png");
+background-image: url("./textures/torn/6.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-texture-7 {
-background-image: url("/textures/torn/7.png");
+background-image: url("./textures/torn/7.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-texture-8 {
-background-image: url("/textures/torn/8.png");
+background-image: url("./textures/torn/8.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-texture-9 {
-background-image: url("/textures/torn/9.png");
+background-image: url("./textures/torn/9.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-texture-10 {
-background-image: url("/textures/torn/10.png");
+background-image: url("./textures/torn/10.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-texture-11 {
-background-image: url("/textures/torn/11.png");
+background-image: url("./textures/torn/11.png");
 background-size: cover;
 background-position: center;
 }
 
 .torn-texture-12 {
-background-image: url("/textures/torn/12.png");
+background-image: url("./textures/torn/12.png");
 background-size: cover;
 background-position: center;
 }

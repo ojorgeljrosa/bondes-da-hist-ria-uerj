@@ -68,9 +68,6 @@ export const ProvaSocialSection = () => (
           Veja o que nossos alunos dizem
         </h2>
         <DoodleUnderline className="mx-auto mt-1 max-w-md" />
-        <div className="flex items-center justify-center gap-3 mt-3">
-          <StampBadge text="FEEDBACKS" color="primary" className="animate-stamp-in" />
-        </div>
         <HandwrittenNote
           text="— feedbacks reais —"
           rotation={1}
@@ -202,29 +199,20 @@ export const ProvaSocialSection = () => (
               transform: `rotate(${aprovadoRotations[i]}deg)`,
             }}
           >
-            <div className="polaroid w-28 md:w-28 bg-white p-2 pb-10 shadow-lg hover-lift relative">
+            <div className="polaroid w-28 md:w-28 bg-white shadow-lg hover-lift relative !px-2.5 !pt-7 !pb-3.5">
               <PushPin
                 color={pinColors[i % 4]}
                 className="absolute -top-4 left-1/2 -translate-x-1/2 z-20"
               />
 
-              <div className="w-full aspect-square bg-paper flex items-center justify-center border border-border/30">
-                <span className="font-display text-lg text-muted-foreground font-bold">
-                  {name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </span>
-              </div>
-
-              <div className="flex flex-col items-center mt-2 relative">
-                <p className="font-body text-xs font-semibold text-ink">
+              <div className="flex flex-col items-center text-center gap-1">
+                <p className="font-body text-xs font-semibold text-ink leading-snug px-1">
                   {name}
                 </p>
                 <StampBadge
                   text="APROVADO ✓"
                   color="green"
-                  className="text-[7px] px-1.5 py-0.5 mt-1"
+                  className="text-[7px] px-1.5 py-0.5"
                 />
               </div>
 

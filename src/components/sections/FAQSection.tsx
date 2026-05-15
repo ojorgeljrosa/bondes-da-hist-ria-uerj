@@ -7,7 +7,6 @@ import {
 import {
   WashiTape,
   PushPin,
-  StampBadge,
   DoodleUnderline,
   DoodleCircle,
   CoffeStain,
@@ -62,12 +61,6 @@ export const FAQSection = () => (
 
     <div className="container mx-auto px-4 max-w-3xl">
       <div className="text-center mb-12 relative">
-        <StampBadge
-          text="DÚVIDAS"
-          color="primary"
-          className="absolute -top-2 -right-2 md:right-4 animate-fade-in-rotate"
-        />
-
         <div className="inline-block relative">
           <WashiTape
             color="yellow"

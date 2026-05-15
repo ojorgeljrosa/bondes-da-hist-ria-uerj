@@ -9,6 +9,7 @@ import { DiferenciaisSection } from "@/components/sections/DiferenciaisSection";
 import { ComparacaoSection } from "@/components/sections/ComparacaoSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTAFinalSection } from "@/components/sections/CTAFinalSection";
+import { SaibaMaisSection } from "@/components/sections/SaibaMaisSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 
 const Index = () => (
@@ -23,8 +24,9 @@ const Index = () => (
     <DiferenciaisSection />
     <ComparacaoSection />
     <FAQSection />
-    <CTAFinalSection />
-    <FooterSection />
+  <CTAFinalSection />
+  <SaibaMaisSection />
+  <FooterSection />
   </main>
 );
 
