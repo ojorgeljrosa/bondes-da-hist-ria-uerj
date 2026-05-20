@@ -82,8 +82,7 @@ export const SaibaMaisSection = () => (
             </h3>
 
             <p className="font-body text-muted-foreground text-base mb-5 leading-relaxed">
-              Dicas diárias de História, resumos para o vestibular e bastidores
-              da preparação UERJ. Conteúdo exclusivo que só quem segue recebe!
+              Dicas para a preparação a prova discursiva e EQ da UERJ. Conteúdo exclusivo que só quem segue recebe!
             </p>
 
             <div className="flex gap-3 mb-5">
@@ -150,13 +149,12 @@ export const SaibaMaisSection = () => (
             </h3>
 
             <p className="font-body text-muted-foreground text-base mb-5 leading-relaxed">
-              Preparação completa para a prova discursiva de História da UERJ.
-              Aulas ao vivo, correções individuais e método comprovado de aprovação.
+              Depois do primeiro EQ abriremos um curso intensivo focado preparação completa para a prova discursiva de História da UERJ. Aulas ao vivo, método focado no que realmente cai na prova.
             </p>
 
             <div className="flex gap-3 mb-5">
               <StampBadge text="AULAS AO VIVO" color="green" className="animate-stamp-in" />
-              <StampBadge text="CORREÇÃO 1:1" color="primary" className="animate-stamp-in" />
+              <StampBadge text="FOCO NO QUE CAI" color="primary" className="animate-stamp-in" />
             </div>
 
             <div className="relative inline-block">

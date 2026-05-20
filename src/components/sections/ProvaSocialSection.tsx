@@ -14,6 +14,7 @@ import {
   TornEdgeSection,
   FoldedCorner,
   NotebookHole,
+  PolaroidFrame,
 } from "../Decorations";
 
 const testimonials = [
@@ -40,12 +41,42 @@ const testimonials = [
 ];
 
 const aprovados = [
-  "Ana Clara M.",
-  "Lucas S.",
-  "Beatriz R.",
-  "Pedro H.",
-  "Camila T.",
-  "Rafael D.",
+  {
+    name: "Giovanna",
+    course: "Arquitetura",
+    placement: "1º lugar",
+    photo: "/aprovados/Giovanna 1 lugar arquitetura.jpeg",
+  },
+  {
+    name: "Letícia S.",
+    course: "Pedagogia",
+    placement: "2º lugar",
+    photo: "/aprovados/Letícia Sampaio - Pegagia, Segundo Lugar.jpeg",
+  },
+  {
+    name: "Gabriel M.",
+    course: "Relações Internacionais",
+    placement: "",
+    photo: "/aprovados/Gabriel Machado Cajueiro - Relações Internacionais.jpeg",
+  },
+  {
+    name: "Allana",
+    course: "Direito",
+    placement: "",
+    photo: "/aprovados/Allana Diretio.jpeg",
+  },
+  {
+    name: "Maria Clara",
+    course: "Psicologia",
+    placement: "",
+    photo: "/aprovados/maria clara - psicologia.jpeg",
+  },
+  {
+    name: "Lorena",
+    course: "Direito",
+    placement: "",
+    photo: "/aprovados/lorena - direto.jpeg",
+  },
 ];
 
 const postItColors: Array<"yellow" | "pink"> = ["yellow", "pink"];
@@ -189,44 +220,70 @@ export const ProvaSocialSection = () => (
         </p>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-6 md:gap-6 max-w-5xl mx-auto pt-4 pb-4">
-        {aprovados.map((name, i) => (
-          <div
-            key={name}
-            className="relative animate-fade-in-rotate"
-            style={{
-              animationDelay: `${i * 80}ms`,
-              transform: `rotate(${aprovadoRotations[i]}deg)`,
-            }}
-          >
-            <div className="polaroid w-28 md:w-28 bg-white shadow-lg hover-lift relative !px-2.5 !pt-7 !pb-3.5">
-              <PushPin
-                color={pinColors[i % 4]}
-                className="absolute -top-4 left-1/2 -translate-x-1/2 z-20"
-              />
+<div className="flex flex-wrap justify-center gap-6 md:gap-8 max-w-5xl mx-auto pt-4 pb-4">
+      {aprovados.map((aluno, i) => (
+        <div
+          key={aluno.name}
+          className="relative animate-fade-in-rotate"
+          style={{
+            animationDelay: `${i * 80}ms`,
+            transform: `rotate(${aprovadoRotations[i % aprovadoRotations.length]}deg)`,
+          }}
+        >
+          <PushPin
+            color={pinColors[i % 4]}
+            className="absolute -top-4 left-1/2 -translate-x-1/2 z-20"
+          />
 
-              <div className="flex flex-col items-center text-center gap-1">
-                <p className="font-body text-xs font-semibold text-ink leading-snug px-1">
-                  {name}
-                </p>
-                <StampBadge
-                  text="APROVADO ✓"
-                  color="green"
-                  className="text-[7px] px-1.5 py-0.5"
-                />
-              </div>
+          <PolaroidFrame
+            src={aluno.photo}
+            alt={`Foto de ${aluno.name}`}
+            caption={
+              <span className="flex flex-col items-center gap-0.5">
+                <span className="font-body text-xs font-semibold text-ink leading-snug">
+                  {aluno.name}
+                </span>
+                <span className="font-body text-[10px] text-ink/70 leading-snug">
+                  {aluno.course}
+                </span>
+                {aluno.placement ? (
+                  <StampBadge
+                    text={`${aluno.placement} ✓`}
+                    color="green"
+                    className="text-[7px] px-1.5 py-0.5 mt-0.5"
+                  />
+                ) : (
+                  <StampBadge
+                    text="APROVADO ✓"
+                    color="green"
+                    className="text-[7px] px-1.5 py-0.5 mt-0.5"
+                  />
+                )}
+              </span>
+            }
+            rotation={0}
+            className="w-32 md:w-36 hover-lift !pb-5"
+          />
 
-              <DoodleStar
-                className={`absolute w-4 h-4 opacity-50 ${
-                  i % 2 === 0
-                    ? "-top-1 -right-1"
-                    : "-bottom-1 -left-1"
-                }`}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
+          {aluno.placement && (
+            <span
+              className="absolute -top-2 -right-2 z-30 w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center text-base shadow-md"
+              style={{ transform: `rotate(${-8 + i * 4}deg)` }}
+            >
+              {aluno.placement === "1º lugar" ? "🥇" : "🥈"}
+            </span>
+          )}
+
+          <DoodleStar
+            className={`absolute w-4 h-4 opacity-50 ${
+              i % 2 === 0
+                ? "top-1 right-0"
+                : "bottom-1 left-0"
+            }`}
+          />
+        </div>
+      ))}
+    </div>
 
       <HandwrittenNote
         text="eles conseguiram! ★"

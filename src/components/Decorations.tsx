@@ -194,14 +194,14 @@ export const PolaroidFrame = ({
 }: {
   src: string;
   alt?: string;
-  caption?: string;
+  caption?: ReactNode;
   rotation?: number;
   className?: string;
 }) => (
   <div className={cn("polaroid inline-block", className)} style={{ transform: `rotate(${rotation}deg)` }}>
     <img src={src} alt={alt} className="w-full block" />
     {caption && (
-      <p className="font-handwritten text-center text-sm text-ink mt-1">{caption}</p>
+      <div className="font-handwritten text-center text-sm text-ink mt-1">{caption}</div>
     )}
   </div>
 );
