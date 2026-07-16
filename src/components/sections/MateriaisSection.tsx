@@ -32,7 +32,6 @@ const products = [
       "Os principais assuntos cobrados",
       "Efemérides (datas importantes) fundamentais para o exame objetivo",
       "Questões selecionadas e organizadas por assunto",
-      "Do período colonial ao contemporâneo",
     ],
     price: "R$ 29,20",
     installments: "ou 4x de R$ 7,95",
