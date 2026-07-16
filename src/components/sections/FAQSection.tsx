@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: "O material é digital?",
-    a: "Sim! São e-books em formato PDF para você estudar onde quiser: celular, tablet ou computador. Baixe uma vez e tenha acesso vitalício.",
+    a: "Sim! São e-books em formato PDF para você estudar onde quiser: celular, tablet ou computador.",
   },
   {
     q: "Tenho garantia?",
