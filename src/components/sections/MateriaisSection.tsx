@@ -31,7 +31,7 @@ const products = [
       "Explicação detalhada da prova",
       "Os principais assuntos cobrados",
       "Efemérides (datas importantes) fundamentais para o exame objetivo",
-      "Questões selecionadas e organizadas por assunto",
+      "Questões selecionadas e organizadas por assunto"
     ],
     price: "R$ 29,20",
     installments: "ou 4x de R$ 7,95",
